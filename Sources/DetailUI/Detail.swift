@@ -30,12 +30,14 @@ public struct Detail<Primary: View, Secondary: View, Tertiary: View>: View {
 
 // MARK: - Style
 
+@MainActor
 public protocol DetailStyle: DynamicProperty {
 
     typealias Configuration = DetailStyleConfiguration
     associatedtype Body: View
 
-    @ViewBuilder func makeBody(configuration: Configuration) -> Body
+    @ViewBuilder @MainActor
+    func makeBody(configuration: Configuration) -> Body
 }
 
 private struct DefaultDetailStyle: DetailStyle {
@@ -79,6 +81,7 @@ extension Scene {
 
 // MARK: - Configuration
 
+@MainActor
 public struct DetailStyleConfiguration {
 
     public struct Primary: View {
