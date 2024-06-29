@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "EnvironmentKey-Concurrency-Testing",
+    platforms: [
+        .macOS(.v14),
+    ],
     products: [
         .library(name: "DetailUI", targets: ["DetailUI"]),
     ],
