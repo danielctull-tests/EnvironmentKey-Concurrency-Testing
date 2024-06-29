@@ -54,7 +54,7 @@ private struct DefaultDetailStyle: DetailStyle {
 // MARK: - Environment
 
 private enum DetailStyleKey: EnvironmentKey {
-    static var defaultValue: any DetailStyle = DefaultDetailStyle()
+    static let defaultValue: any DetailStyle = DefaultDetailStyle()
 }
 
 extension EnvironmentValues {
