@@ -53,8 +53,8 @@ private struct DefaultDetailStyle: DetailStyle {
 
 // MARK: - Environment
 
-private enum DetailStyleKey: EnvironmentKey {
-    static let defaultValue: any DetailStyle = DefaultDetailStyle()
+private enum DetailStyleKey: @preconcurrency EnvironmentKey {
+    @MainActor static let defaultValue: any DetailStyle = DefaultDetailStyle()
 }
 
 extension EnvironmentValues {
