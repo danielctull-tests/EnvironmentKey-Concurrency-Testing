@@ -12,7 +12,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "DetailUI"
+            name: "DetailUI",
+            swiftSettings: [
+              .enableExperimentalFeature("StrictConcurrency"),
+            ]
         ),
     ]
 )
