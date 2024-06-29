@@ -31,7 +31,7 @@ public struct Detail<Primary: View, Secondary: View, Tertiary: View>: View {
 // MARK: - Style
 
 @MainActor
-public protocol DetailStyle: DynamicProperty {
+public protocol DetailStyle: DynamicProperty, Sendable {
 
     typealias Configuration = DetailStyleConfiguration
     associatedtype Body: View
